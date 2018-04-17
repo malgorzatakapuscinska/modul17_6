@@ -1,5 +1,6 @@
 var express = require('express');
 var passport = require('passport');
+var session = require('express-session');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var config = require('./config');
 var app = express();
@@ -61,6 +62,14 @@ app.get('/logout', function(req, res){
   req.logout();
   res.redirect('/');
 });
+
+/*app.get('/logout', function(req, res) {
+	console.log(req.session);
+    req.passport.session.destroy(function(e){
+        req.logout();
+        res.redirect('/');
+    });
+});*/
 
 app.listen(3000);
 	app.use(function (req, res, next) {
