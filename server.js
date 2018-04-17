@@ -56,7 +56,11 @@ app.get('/auth/google/callback',
         successRedirect : '/logged',
         failureRedirect: '/'
     }));
-
+    
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
 
 app.listen(3000);
 	app.use(function (req, res, next) {
