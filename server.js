@@ -8,6 +8,7 @@ var googleProfile = {};
 
 app.set('view engine', 'pug');
 app.set('views', './views');
+ app.use(express.static('assets'));
 
 passport.serializeUser(function(user, done){
 	done(null, user);

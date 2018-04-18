@@ -3,11 +3,21 @@ doctype html
 html
 
 	head
-
+		meta(name="vievport" content="width=device-width, initial-scale=1.0" )
 		title="Google login"
+		link(rel="stylesheet" type="text/css" href="style.css")
 
 	body
-
-		h1 Google Login
-
-		a(href="http://localhost:3000/auth/google") Login
+		header 
+			h1 Google Login
+			
+		section.login
+			form
+				div
+					label(for="user_name") User name:
+					input(type="text" placeholder="Enter username" name="user_name" required)/
+				div
+					label(for="password") Password:
+					input(type="password" placeholder="Enter password" name="password" required)/
+				button(type="submit") Log in
+			a(href="http://localhost:3000/auth/google") Login with Google Account
